@@ -1,0 +1,26 @@
+{
+  "name": "devflix",
+  "version": "1.0.0",
+  "description": "- Acesse o [index](./public/index/index.html) para visualizar a lista de titulos - Acesse o [bandersnatch](./public/bandersnatch/index.html) para acessar o titulo base do projeto",
+  "main": "index.js",
+  "scripts": {
+    "assets": "npx http-server --cors -p 8081 assets",
+    "dev": "npx http-server -c-1 --cors -p 8080 public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagorasouza/devflix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagorasouza/devflix/issues"
+  },
+  "homepage": "https://github.com/thiagorasouza/devflix#readme",
+  "devDependencies": {
+    "eslint-config-prettier": "8.5.0",
+    "http-server": "^14.1.1",
+    "prettier": "2.7.1"
+  }
+}
