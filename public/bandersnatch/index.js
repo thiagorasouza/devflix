@@ -7,11 +7,14 @@ async function main() {
   const manifest = await (await fetch(MANIFEST_URL)).json();
   const host = isLocal ? manifest.localHost : manifest.productionHost;
 
+  const videoComponent = new VideoComponent();
   const network = new Network({ host });
-  const videoPlayer = new VideoPlayer({ manifest, network });
-  videoPlayer.initializeCodec();
+  const videoPlayer = new VideoPlayer({ manifest, network, videoComponent });
 
-  VideoComponent.initializePlayer();
+  videoPlayer.initializeCodec();
+  videoComponent.initializePlayer();
+
+  window.nextChunk = (data) => videoPlayer.nextChunk(data);
 }
 
 window.onload = main;
